@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	char a;
+	char b;
+	for (b = 'a'; b <= 'z'; b++)
+		putchar(b);
+
+	for (a = 'A'; a <= 'Z'; a++)
+		putchar(a);
+		putchar('\n');
+
+	return (0);
+}
