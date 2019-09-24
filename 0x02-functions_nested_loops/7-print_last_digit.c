@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+ * print_last_digit - check the code for Holberton School students.
+ *@n: ineteger
+ * Return: Always .
+ */
 int print_last_digit(int n)
 {
 	int l = n % 10;
