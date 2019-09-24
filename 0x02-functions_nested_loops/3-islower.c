@@ -1,10 +1,11 @@
 #include "holberton.h"
 /**
  * _islower - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * c: ineteger
+ * Return: Always .
  */
 int _islower(int c)
+
 {
 	if (c < 97)
 {
