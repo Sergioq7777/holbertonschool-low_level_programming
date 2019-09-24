@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _islower - check the code for Holberton School students.
- * c: ineteger
+ *@c: ineteger
  * Return: Always .
  */
 int _islower(int c)
