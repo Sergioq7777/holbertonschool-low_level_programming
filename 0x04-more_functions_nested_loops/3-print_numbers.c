@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * mul - check the code for Holberton School students.
+ * print_numbers - check the code for Holberton School students.
  *@a : initiger
  * Return: Always 0.
  */
