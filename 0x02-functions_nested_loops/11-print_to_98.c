@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_to_98 - check the code for Holberton School students.
- *
+ *@n : ineteger
  * Return: Always .
  */
 void print_to_98(int n)
