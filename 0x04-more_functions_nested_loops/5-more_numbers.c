@@ -2,8 +2,7 @@
 
 /**
  *  more_numbers - check the code for Holberton School students.
- *@a : initiger
- *@b : initiger
+ *
  * Return: Always 0.
  */
 
