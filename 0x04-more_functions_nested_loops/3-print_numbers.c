@@ -3,14 +3,16 @@
 /**
  * mul - check the code for Holberton School students.
  *@a : initiger
- *@b : initiger
  * Return: Always 0.
  */
 
-int mul(int a, int b)
+void print_numbers(void)
 {
-	int m;
+	int a;
 
-	m = a * b;
-	return (m);
+	for (a = 48 ; a <= 57 ; a++)
+	{
+		_putchar(a);
+	}
+	_putchar('\n');
 }
