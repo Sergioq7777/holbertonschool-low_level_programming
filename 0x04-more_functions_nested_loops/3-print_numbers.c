@@ -1,10 +1,9 @@
 #include "holberton.h"
 /**
  * print_numbers - check the code for Holberton School students.
- *@a : initiger
- * Return: Always 0.
+ *
+ * Return: Void.
  */
-
 void print_numbers(void)
 {
 	int a;
