@@ -2,7 +2,7 @@
 
 /**
  * mul - check the code for Holberton School students.
- *@a : initiger
+ *
  * Return: Always 0.
  */
 
