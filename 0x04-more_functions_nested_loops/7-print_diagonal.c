@@ -2,9 +2,7 @@
 /**
  *  print_diagonal - check the code for Holberton School students.
  *@n : integer
- *@v : intiger
- *@h : intiger
- * Return: Always 0.
+ * Return: Void.
  */
 
 void print_diagonal(int n)
