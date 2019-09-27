@@ -2,7 +2,7 @@
 
 /**
  *  print_square - check the code for Holberton School students.
- *
+ *@size : integer
  * Return: Void.
  */
 
