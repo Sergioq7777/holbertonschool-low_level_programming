@@ -1,11 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
-
-/**
- *  print_square - check the code for Holberton School students.
- *
- * Return: Void.
- */
 
 int main(void)
 {
@@ -27,11 +20,11 @@ int main(void)
 		}
 		else if (z >= 100)
 		{
-			printf("Buzz\n");
+			printf("\n");
 		}
 		else
 		{
-			printf(" %d ", z);
+			printf("%d ", z);
 		}
 	}
 	printf("\n");
