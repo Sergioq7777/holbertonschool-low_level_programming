@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always.
+ */
+
 int main(void)
 {
 	int z;
@@ -18,7 +24,7 @@ int main(void)
 		{
 			printf("Buzz ");
 		}
-		else if (z >= 100)
+		else if (z == 100)
 		{
 			printf("\n");
 		}
