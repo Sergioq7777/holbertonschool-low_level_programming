@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include "holberton.h"
+
+/**
+ *  print_square - check the code for Holberton School students.
+ *
+ * Return: Void.
+ */
+
+int main(void)
+{
+
+	int z ;
+
+/**	int a = fizz ;
+ *	int b = buzz ;
+ *	int c = fizzbuzz;
+*/
+	for(z = 1 ; z <= 100 ; z++)
+	{
+		_putchar('h');
+
+	}
+	return (0);
+
+
+
+}
