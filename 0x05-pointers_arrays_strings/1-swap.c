@@ -2,7 +2,9 @@
 
 /**
  * swap_int - check the code for Holberton School students.
- *
+ *@a : integer
+ *@b : integer
+ *@z : integer
  * Return: Always 0.
  */
 
