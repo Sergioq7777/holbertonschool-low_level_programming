@@ -2,7 +2,7 @@
 
 /**
  * rev_string - check the code for Holberton School students.
- *@s: integer
+ *@s: char
  * Return:  void.
  */
 
@@ -19,7 +19,7 @@ void rev_string(char *s)
 	}
 	--a;
 
-	b = 0
+	b = 0;
 	while (b < a)
 	{
 		i = s[a];
