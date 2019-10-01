@@ -2,8 +2,7 @@
 
 /**
  * _strlen - check the code for Holberton School students.
- *@s : integer
- *@i : integer
+ *@s: integer
  * Return: Always 0.
  */
 
