@@ -1,24 +1,28 @@
 #include "holberton.h"
 
-#include "holberton.h"
-
 /**
  * print_rev - check the code for Holberton School students.
- *
- * Return: Always 0.
+ *@s: integer
+ * Return:  void.
  */
 
 void print_rev(char *s)
 {
-	int a;
+	int cont, rev;
 
-	for(a = '\0' ; s[a] <= 0 ; ++a)
-		{
-	while (*s)
+	while (*s != '\0')
 	{
-		_putchar(*s);
-		++s;
+		s++;
+		cont++;
 	}
-	_putchar('\n');
+	for (rev = cont ; rev >= 0 ; --rev)
+	{
+		if (rev != cont)
+		{
+			_putchar(*s);
 		}
+		--s;
+	}
+
+	_putchar('\n');
 }
