@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * print_array - check the code for Holberton School students.
  *@a: integer
  *@n: integer
  * Return: Always 0.
