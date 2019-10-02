@@ -26,10 +26,11 @@ void puts_half(char *str)
 	else
 	{
 		h = (c - 1) / 2;
-	        h++;
-		for (;h < c ;h++)
+
+		++h;
+		for (; h < c ; h++)
 		{
-		_putchar(str[h]);
+			_putchar(str[h]);
 		}
 
 	}
