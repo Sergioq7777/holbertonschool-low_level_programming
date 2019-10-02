@@ -12,9 +12,9 @@ void print_array(int *a, int n)
 {
 	int x;
 
-	for (x = 0 ; x <= n -1; x++)
+	for (x = 0 ; x <= n - 1 ; x++)
 	{
-		if (x == n - 1 )
+		if (x == n - 1)
 		{
 			printf("%d", a[x]);
 		}
@@ -22,7 +22,6 @@ void print_array(int *a, int n)
 		{
 			printf("%d, ", a[x]);
 		}
-
 	}
 	printf("\n");
 }
