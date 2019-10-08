@@ -1,14 +1,13 @@
 #include "holberton.h"
 
 /**
- * print_chessboar - check the code for Holberton School students.
+ * print_chessboard - check the code for Holberton School students.
  *@a: char
  * Return: Void.
  */
 
 void print_chessboard(char (*a)[8])
 {
-
 	int b, c;
 
 	for (b = 0 ; b < 8 ; b++)
