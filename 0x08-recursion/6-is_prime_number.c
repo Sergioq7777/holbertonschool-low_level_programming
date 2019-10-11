@@ -3,7 +3,7 @@
 /**
  * prime - check the code for Holberton School students.
  *@p1: int
- *@n1: int
+ *@n2: int
  * Return: Always.
  */
 
