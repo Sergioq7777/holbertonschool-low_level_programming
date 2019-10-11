@@ -2,8 +2,8 @@
 
 /**
  * prime - check the code for Holberton School students.
- *@h: int
- *@a: int
+ *@p1: int
+ *@n1: int
  * Return: Always.
  */
 
