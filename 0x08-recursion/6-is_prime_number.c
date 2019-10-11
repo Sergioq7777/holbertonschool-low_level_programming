@@ -1,20 +1,21 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
- * prime - check the code for Holberton School students.
+ * _prime - check the code for Holberton School students.
  *@p1: int
  *@n2: int
  * Return: Always.
  */
 
-int prime(int p1, int n2)
+int _prime(int p1, int n2)
 {
 	if (p1 == n2)
 		return (1);
 	if (n2 % p1 == 0 || n2 <= 1)
 		return (0);
 	else
-		return (prime(p1 + 1, n2));
+		return (_prime(p1 + 1, n2));
 }
 
 /**
@@ -25,5 +26,5 @@ int prime(int p1, int n2)
 
 int is_prime_number(int n)
 {
-	return (prime(2, n));
+	return (_prime(2, n));
 }
