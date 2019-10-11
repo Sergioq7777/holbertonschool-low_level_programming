@@ -19,7 +19,7 @@ int _prime(int p1, int n2)
 }
 
 /**
- * is_pirme_number - check the code for Holberton School students.
+ * is_prime_number - check the code for Holberton School students.
  *@n: int
  * Return: Always.
  */
