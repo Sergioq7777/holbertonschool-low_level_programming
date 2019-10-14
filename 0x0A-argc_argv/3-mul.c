@@ -16,16 +16,22 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1 ; i < argc ; i++)
 		{
-			if (i < 2)
+			if (argc == 3)
 			{
-				printf("Error\n");
+				mul = mul * atoi(argv[i]);
 			}
 			else
 			{
-				mul = mul * atoi(argv[i]);
-				printf("%d\n", mul);
+				printf("Error\n");
+				return (1);
 			}
 		}
+		printf("%d\n", mul);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
 	}
 	return (0);
 }
