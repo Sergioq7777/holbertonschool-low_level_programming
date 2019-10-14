@@ -11,22 +11,19 @@
 
 int main(int argc, char *argv[])
 {
-	int i, y = 0;
-	char numero;
+	int i, x, y = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		numero = *argv[i];
-
-		if (isdigit(numero) != 0)
+		for (x = 0 ; argv[i][x] != '\0' ; x++)
 		{
-			y = y + atoi(argv[i]);
+			if (argv[i][x] <= 47 || argv[i][x] >= 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		y = y + (atoi(argv[i]));
 	}
 	printf("%d\n", y);
 	return (0);
