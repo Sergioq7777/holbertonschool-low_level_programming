@@ -13,7 +13,12 @@ int main(int argc, char *argv[])
 {
 	int i, x, y = 0;
 
-	if (argc >= 2)
+	if (argc < 2)
+	{
+		printf("0");
+		return (0);
+	}
+	else
 	{
 		for (i = 1; i < argc; i++)
 		{
@@ -28,11 +33,6 @@ int main(int argc, char *argv[])
 			y = y + (atoi(argv[i]));
 		}
 		printf("%d\n", y);
+		return (0);
 	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
-	return (0);
 }
