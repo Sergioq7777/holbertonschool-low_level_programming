@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		printf("0");
+		printf("0\n");
 		return (0);
 	}
 	else
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 					return (1);
 				}
 			}
-			y = y + (atoi(argv[i]));
+			y +=  atoi(argv[i]);
 		}
 		printf("%d\n", y);
 		return (0);
