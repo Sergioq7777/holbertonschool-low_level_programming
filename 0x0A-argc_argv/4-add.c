@@ -13,18 +13,26 @@ int main(int argc, char *argv[])
 {
 	int i, x, y = 0;
 
-	for (i = 1; i < argc; i++)
+	if (argc >= 2)
 	{
-		for (x = 0 ; argv[i][x] != '\0' ; x++)
+		for (i = 1; i < argc; i++)
 		{
-			if (argv[i][x] <= 47 || argv[i][x] >= 57)
+			for (x = 0 ; argv[i][x] != '\0' ; x++)
 			{
-				printf("Error\n");
-				return (1);
+				if (argv[i][x] <= 47 || argv[i][x] >= 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+			y = y + (atoi(argv[i]));
 		}
-		y = y + (atoi(argv[i]));
+		printf("%d\n", y);
 	}
-	printf("%d\n", y);
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
 	return (0);
 }
