@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - check the code for Holberton School students.
@@ -10,28 +11,23 @@
 
 int main(int argc, char *argv[])
 {
-	int x, num;
+	int i, y = 0;
+	char numero;
 
-	if (argc == 0)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0 \n");
-		return (1);
-	}
-	else
-	{
-		for (x = 1; x < argc; x++)
+		numero = *argv[i];
+
+		if (isdigit(numero) != 0)
 		{
-			if (*argv[x] >= 48 && *argv[x] <= 57)
-			{
-				num = num + atoi(argv[x]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			y = y + atoi(argv[i]);
 		}
-		printf("%i \n", num);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
+	printf("%d\n", y);
 	return (0);
 }
