@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - check the code for Holberton School students.
+ *@argc: int
+ *@argv: char
+ * Return: Always.
+ */
+
+int main(int argc, char *argv[])
+{
+	int i, mul = 0;
+
+	if (argc > 1)
+	{
+		for (i = 0 ; i < argc ; i++)
+		{
+			mul = mul * atoi(argv[i]);
+		}
+		printf("%d\n", mul);
+	}
+	return (0);
+}
