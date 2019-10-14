@@ -13,25 +13,21 @@ int main(int argc, char *argv[])
 {
 	int i, y = 0;
 	char numero;
+
+	for (i = 1; i < argc; i++)
 	{
-		int x, y = 0;
-		char num;
+		numero = *argv[i];
 
-		for (x = 1; x < argc ; x++)
+		if (isdigit(numero) != 0)
 		{
-			numero = *argv[x];
-
-			if (isdigit(numero) != 0)
-			{
-				y = y + atoi(argv[x]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			y = y + atoi(argv[i]);
 		}
-		printf("%d\n", add);
-		return (0);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
+	printf("%d\n", y);
+	return (0);
 }
