@@ -19,9 +19,10 @@ char *create_array(unsigned int size, char c)
 
 	if ((size != 0) && (p1 != '\0'))
 	{
-		for (; x < size ; x++)
+		while (x < size)
 		{
 			p1[x] = c;
+			x++;
 		}
 		return (p1);
 	}
