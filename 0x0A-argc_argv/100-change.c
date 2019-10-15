@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
 	int cents = 0;
 	int money;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
