@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
- * _strlen - len of each elemento of my big array.
- * @str: My string
+ * str -  spell the string.
+ * @str: Char
  * Return: My len.
  */
 int str(char *str)
@@ -16,10 +16,10 @@ int str(char *str)
 	return (x);
 }
 /**
- * argstostr - reply argc and argv function.
- * @ac: My arguments.
- * @av: My array of arrays.
- * Return: My pointer for my string.
+ * argstostr -  argc- argv.
+ * @ac: int.
+ * @av: char.
+ * Return: Always.
  */
 char *argstostr(int ac, char **av)
 {
