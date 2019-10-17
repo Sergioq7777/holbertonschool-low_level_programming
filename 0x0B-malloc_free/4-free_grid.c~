@@ -1,14 +1,12 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * alloc_grid - count the characters on a string
  * @width: char
  * @height: char
  * Return: char
  */
-
 int **alloc_grid(int width, int height)
 {
 	int i, j, c, y;
@@ -17,7 +15,7 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 	{
-		return (0);
+		return (NULL);
 	}
 	mtx = malloc(height * sizeof(int));
 
