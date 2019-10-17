@@ -3,39 +3,47 @@
 #include <stdlib.h>
 
 /**
- * *string_nconcat -  concatenates two strings.
- * @n: int
+ * *string_nconcat - concatenates two strings.
+ * @n: unsigned int
  * @s2: char
- * @s1 char
+ * @s1: char
  * Return: Never.
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 {
-	int i, j, k, m;
-	char *x, *y;
+	int i, j, m;
+	char *x;
 
 	if (s1 == NULL)
 	{
-		return (NULL);
+		return ("");
 	}
 	if (s2 == NULL)
 	{
-		return (NULL);
+		return ("");
 	}
 
 	for (i = 0 ; s1[i] != '\0' ; i++)
 		;
-	for (j = 0 ; s2[j] != '\0' ; i++)
-		;
+	x = malloc(sizeof(char) * n + i + 1)
+		if (x == NULL)
+		{
+			return (NULL);
+		}
 
-	x = malloc(sizeof(char))
-
-	for (k = 0; k < i; k++)
+	for (j = 0, m = 0; j < (i + n); j++)
 	{
-
+		if (j < i)
+		{
+			x[j] = s1[j];
+		}
+		else
+		{
+			x[j] = s2[m++];
+		}
 	}
-	for (m = 0; m < )
-
+	x[j] = '\0';
+	return (x);
 }
