@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - count the characters on a string
+ * free_grid - count the characters on a string
  * @grid: int
  * @height: int
  * Return: char
