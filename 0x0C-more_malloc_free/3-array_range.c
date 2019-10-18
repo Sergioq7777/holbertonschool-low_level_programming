@@ -4,7 +4,7 @@
 
 /**
  * *array_range - function that creates an array of integers.
- * @min: int 
+ * @min: int
  * @max: int
  * Return: Never.
  */
@@ -24,7 +24,7 @@ int *array_range(int min, int max)
 	y = max - min;
 	cont = malloc(sizeof(int) * (y + 1));
 
-	if(cont == NULL)
+	if (cont == NULL)
 	{
 		return (NULL);
 	}
