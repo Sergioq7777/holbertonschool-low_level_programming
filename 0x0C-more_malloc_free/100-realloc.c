@@ -4,9 +4,10 @@
 char *_memcpy(char *dest, char *src, unsigned int n);
 
 /**
- * *array_range - function that creates an array of integers.
- * @min: int
- * @max: int
+ * *_realloc - function that creates an array of integers.
+ * @ptr: int
+ * @old_size: int
+ * @new_size: int
  * Return: Never.
  */
 
@@ -21,10 +22,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		if (p == NULL)
 		{
 			free(ptr);
-			return(NULL);
+			return (NULL);
 		}
 		free(ptr);
-		return(p);
+		return (p);
 	}
 	if (new_size == old_size)
 	{
@@ -33,31 +34,39 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == 0)
 	{
 		free(ptr);
-		return(NULL);
+		return (NULL);
 	}
 
-	p= malloc(new_size);
+	p = malloc(new_size);
 
 	if (p == NULL)
 	{
 		free(ptr);
-		return(NULL);
+		return (NULL);
 	}
 	if (new_size > old_size)
 	{
-		_memcpy(p ,ptr ,old_size);
+		_memcpy(p, ptr, old_size);
 		free(ptr);
 	}
-	return(p);
+	return (p);
 }
+
+/**
+ * *_memcpy - function that creates an array of integers.
+ * @dest: char
+ * @src: char
+ * @n: int
+ * Return: Never.
+ */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
-	for(i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		dest[i] = src [i];
+		dest[i] = src[i];
 	}
 	return (dest);
 }
