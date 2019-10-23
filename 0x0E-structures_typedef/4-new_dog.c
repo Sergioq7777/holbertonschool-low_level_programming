@@ -1,48 +1,73 @@
-#include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
+
 /**
- * print_dog - Initialize a variable of type struct dog.
- *@name: char
- *@age: float
- *@owner: char
- * Return: Always 0.
+ *
+ * countmause - Count string
+ *
+ * @str: String
+ * return: pointer
+ *
+ */
+
+
+void *countmause(char *str)
+{
+	int n;
+	char *i;
+
+	for (n = 0; str[n] != '\0'; i++);
+
+	i = malloc(n + 1);
+	if (i == NULL)
+		return (NULL);
+
+	for (n = 0; str[n] != '\0'; n++)
+		i[n] = str[n];
+	i[n] = '\0';
+
+	return (i);
+}
+
+/**
+ * new_dog - Write a function that creates a new dog.
+ *
+ * @name: variable 2
+ * @age: variable 3
+ * @owner: variable 4
+ *
+ *Return: pointer
+ *
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	int i, new_name, new_owner;
+	dog_t *p;
+	char *copycat1, *copycat2;
 
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL || !name || !owner)
+	p = malloc(sizeof(dog_t));
+
+	if (p == NULL)
+		return (NULL);
+
+	copycat1 = countmause(name);
+	if (copycat1 == NULL)
 	{
-		free(new_dog);
+		free(p);
 		return (NULL);
 	}
 
-	for (new_name = 0 ; name[new_name] ; new_name++)
-		;
-	for (new_owner = 0 ; owner[new_owner] ; new_owner++)
-		;
-
-	new_dog->name = malloc(new_name + 1);
-	new_dog->owner = malloc(new_owner + 1);
-
-	if (!new_dog->name || !new_dog->owner)
+	copycat2 = countmause(owner);
+	if (copycat2 == NULL)
 	{
-		free(new_dog->owner);
-		free(new_dog->name);
-		free(new_dog);
+		free(p);
+		free(copycat1);
 		return (NULL);
 	}
 
-	for (i = 0 ; i < new_name ; i++)
-		new_dog->name[i] = name[i];
-	new_dog->name[i] = '\0';
-	new_dog->age = age;
-
-	for (i = 0 ; i < new_owner ; i++)
-		new_dog->owner[i] = owner[i];
-	new_dog->owner[i] = '\0';
-	return (new_dog);
+	p->name = copycat1;
+	p->age = age;
+	p->owner = copycat2;
+	return (p);
 }
