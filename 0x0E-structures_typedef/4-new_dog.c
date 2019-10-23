@@ -1,73 +1,95 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
-
 /**
- *
- * countmause - Count string
- *
- * @str: String
- * return: pointer
- *
+ * _strlen - check the length of the string.
+ * @s: param of the pointer of the string
+ * Return: 10 the length.
  */
 
-
-void *countmause(char *str)
+int _strlen(char *s)
 {
-	int n;
-	char *i;
+	int len = 0;
 
-	for (n = 0; str[n] != '\0'; i++);
-
-	i = malloc(n + 1);
-	if (i == NULL)
-		return (NULL);
-
-	for (n = 0; str[n] != '\0'; n++)
-		i[n] = str[n];
-	i[n] = '\0';
-
-	return (i);
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
 
 /**
- * new_dog - Write a function that creates a new dog.
- *
- * @name: variable 2
- * @age: variable 3
- * @owner: variable 4
- *
- *Return: pointer
- *
+ * *_strcpy - check the code for Holberton School students.
+ * @dest: char array of destiny
+ * @src: Is the source array
+ * Return: The pointer to dest.
  */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
 
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * *_strdup - Funtion that return newly alocated space.
+ * @str: char array of destiny
+ * Return: The pointer to dest.
+ */
+char *_strdup(char *str)
+{
+	char *ar;
+
+	if (str == '\0')
+		return (NULL);
+
+	ar = malloc((_strlen(str) * 1) + 1);
+
+	if (ar == '\0')
+		return (NULL);
+
+	_strcpy(ar, str);
+	return (ar);
+}
+/**
+ * new_dog - creating a puppy form the dog structure.
+ * @name:The name of the nweDog
+ * @age: The age of the newDog
+ * @owner: The owner of the newDog
+ * Return: newDog
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *p;
-	char *copycat1, *copycat2;
+	dog_t *newDog;
 
-	p = malloc(sizeof(dog_t));
+	newDog = malloc(sizeof(dog_t));
 
-	if (p == NULL)
-		return (NULL);
-
-	copycat1 = countmause(name);
-	if (copycat1 == NULL)
+	if (newDog == NULL)
 	{
-		free(p);
 		return (NULL);
 	}
 
-	copycat2 = countmause(owner);
-	if (copycat2 == NULL)
+	newDog->name = _strdup(name);
+
+	if (newDog->name == 0)
 	{
-		free(p);
-		free(copycat1);
-		return (NULL);
+		free(newDog);
+		return (0);
 	}
 
-	p->name = copycat1;
-	p->age = age;
-	p->owner = copycat2;
-	return (p);
+	newDog->age = age;
+
+	newDog->owner = _strdup(owner);
+
+	if (newDog->owner == 0)
+	{
+		free(newDog->name);
+		free(newDog);
+		return (0);
+	}
+	return (newDog);
 }
