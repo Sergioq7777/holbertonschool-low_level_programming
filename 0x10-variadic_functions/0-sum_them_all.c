@@ -3,7 +3,6 @@
 /**
  * sum_them_all - Returns the sum of all its parameters.
  *@n: unsigned int.
- *@x: unsigned int
  *
  * Return: Always .
  */
