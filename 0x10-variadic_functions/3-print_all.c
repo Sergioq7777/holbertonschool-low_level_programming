@@ -11,36 +11,51 @@
  * Just maximum 9 variables.
  * Print new line  at the end of the function.
  *
- * Return: nule .
+ * Return: none .
  */
 
 void print_all(const char * const format, ...)
-
-
-void
-foo(char *fmt, ...)
 {
-    va_list ap;
-    int d;
-    char c, *s;
 
-   va_start(ap, fmt);
-    while (*fmt)
-        switch (*fmt++) {
-        case 's':              /* string */
-            s = va_arg(ap, char *);
-            printf("string %s\n", s);
-            break;
-        case 'd':              /* int */
-            d = va_arg(ap, int);
-            printf("int %d\n", d);
-            break;
-        case 'c':              /* char */
-            /* need a cast here since va_arg only
-               takes fully promoted types */
-            c = (char) va_arg(ap, int);
-            printf("char %c\n", c);
-            break;
-        }
-    va_end(ap);
+	va_list argumentos;
+	int contador = 0;
+	char  *strg, *spc;
+
+	va_start(argumentos, format);
+
+	contador = 0;
+	while (format[contador] != 0)
+	{
+		spc = "";
+		if (contador >= 0 && format[contador + 1] != 0)
+		{
+			spc = ", ";
+		}
+
+		switch (format[contador])
+		{
+		case 'c':/**char */
+			printf("%c%s", (char) va_arg(argumentos, int), spc);
+			break;
+		case 'i':/**integer */
+			printf("%d%s", va_arg(argumentos, int), spc);
+			break;
+		case 'f':/**float */
+			printf("%f%s", va_arg(argumentos, double), spc);
+			break;
+		case 's':/**char* */
+			strg = va_arg(argumentos, char *);
+			if (!strg)
+			{
+				strg = "(nil)";
+				printf("%s%s", strg, spc);
+				break;
+			default:
+				break;
+			}
+		}
+		contador++;
+	}
+	va_end(argumentos);
+	printf("\n");
 }
