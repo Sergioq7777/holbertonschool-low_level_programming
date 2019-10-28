@@ -17,11 +17,10 @@ void print_all(const char * const format, ...)
 
 	va_start(argumentos, format);
 
-	contador = 0;
-	while (format[contador] != 0)
+	while (format[contador] && format)
 	{
 		spc = "";
-		if (format[contador + 1] != 0 && contador >= 0)
+		if (format[contador + 1])
 			spc = ", ";
 
 		switch (format[contador])
@@ -37,8 +36,9 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			strg = va_arg(argumentos, char *);
-			if (!strg)
+			if (strg == NULL)
 				strg = "(nil)";
+
 			printf("%s%s", strg, spc);
 			break;
 		default:
