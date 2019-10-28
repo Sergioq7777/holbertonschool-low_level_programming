@@ -35,10 +35,11 @@ void print_all(const char * const format, ...)
 		case 's':/**char* */
 			strg = va_arg(argumentos, char*);
 			if (!strg)
+			{
 				strg = "(nil)";
-
-				printf("%s%s", strg, spc);
-				break;
+			}
+			printf("%s%s", strg, spc);
+			break;
 
 		case 'c':/**char */
 			printf("%c%s", va_arg(argumentos, int), spc);
