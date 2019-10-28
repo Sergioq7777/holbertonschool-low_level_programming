@@ -13,40 +13,40 @@ void print_all(const char * const format, ...)
 
 	va_list argumentos;
 	int contador = 0;
-	char  *strg, *spc;
+	char  *strg;
 
 	va_start(argumentos, format);
 
 	while (format[contador] && format)
 	{
-		spc = "";
-		if (format[contador + 1])
-			spc = ", ";
-
 		switch (format[contador])
 		{
+		case 'c':
+			printf("%c", va_arg(argumentos, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(argumentos, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(argumentos, double));
+			break;
 		case 's':
 			strg = va_arg(argumentos, char *);
 			if (strg == NULL)
-				strg = "(nil)";
-			printf("%s%s", strg, spc);
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", strg);
 			break;
-
-		case 'c':
-			printf("%c%s", (char) va_arg(argumentos, int), spc);
-			break;
-
-		case 'i':
-			printf("%d%s", va_arg(argumentos, int), spc);
-			break;
-
-		case 'f':
-			printf("%f%s", va_arg(argumentos, double), spc);
-			break;
-
+		default:
+			contador++;
+			continue;
 		}
+		if (contador < format[contador + 1])
+			printf(", ");
 		contador++;
 	}
-	va_end(argumentos);
 	printf("\n");
+	va_end(argumentos);
 }
