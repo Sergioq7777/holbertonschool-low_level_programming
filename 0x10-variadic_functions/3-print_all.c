@@ -2,7 +2,6 @@
 
 /**
  * print_all - prints anything.
- *@char: const.
  *@format: const.
  *
  *If the string is NULL, print (nil)
@@ -22,20 +21,27 @@ void print_all(const char * const format, ...)
 	char  *strg, *spc;
 
 	va_start(argumentos, format);
-
-	contador = 0;
-	while (format[contador] != 0)
+	while (format[contador] && format)
 	{
 		spc = "";
-		if (contador >= 0 && format[contador + 1] != 0)
+		if (format[contador + 1])
 		{
 			spc = ", ";
 		}
 
 		switch (format[contador])
 		{
+
+		case 's':/**char* */
+			strg = va_arg(argumentos, char*);
+			if (!strg)
+				strg = "(nil)";
+
+				printf("%s%s", strg, spc);
+				break;
+
 		case 'c':/**char */
-			printf("%c%s", (char) va_arg(argumentos, int), spc);
+			printf("%c%s", va_arg(argumentos, int), spc);
 			break;
 		case 'i':/**integer */
 			printf("%d%s", va_arg(argumentos, int), spc);
@@ -43,16 +49,6 @@ void print_all(const char * const format, ...)
 		case 'f':/**float */
 			printf("%f%s", va_arg(argumentos, double), spc);
 			break;
-		case 's':/**char* */
-			strg = va_arg(argumentos, char *);
-			if (!strg)
-			{
-				strg = "(nil)";
-				printf("%s%s", strg, spc);
-				break;
-			default:
-				break;
-			}
 		}
 		contador++;
 	}
