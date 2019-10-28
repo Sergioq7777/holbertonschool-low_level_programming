@@ -2,10 +2,10 @@
 
 /**
  * print_all - prints anything.
- *@format: string.
+ *@format: const.
  *
  *
- * Return: Empty .
+ * Return: Nothing .
  */
 
 void print_all(const char * const format, ...)
@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 
 	va_start(argumentos, format);
 
-	while (format[contador] && format)
+	while (format && format[contador])
 	{
 		switch (format[contador])
 		{
