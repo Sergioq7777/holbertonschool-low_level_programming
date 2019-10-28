@@ -43,9 +43,11 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':/**char* */
 			strg = va_arg(argumentos, char*);
-			if (!strg)
+			if (strg == NULL)
 				strg = "(nil)";
 			printf("%s%s", strg, spc);
+			break;
+		default:
 			break;
 		}
 		contador++;
