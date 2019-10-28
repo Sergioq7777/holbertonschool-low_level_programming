@@ -21,34 +21,31 @@ void print_all(const char * const format, ...)
 	char  *strg, *spc;
 
 	va_start(argumentos, format);
-	while (format[contador] && format)
+
+	contador = 0;
+	while (format[contador] != 0)
 	{
 		spc = "";
-		if (format[contador + 1])
+		if (format[contador + 1] != 0 && contador >= 0)
 		{
 			spc = ", ";
 		}
-
 		switch (format[contador])
 		{
-
-		case 's':/**char* */
-			strg = va_arg(argumentos, char*);
-			if (!strg)
-			{
-				strg = "(nil)";
-			}
-			printf("%s%s", strg, spc);
-			break;
-
 		case 'c':/**char */
-			printf("%c%s", va_arg(argumentos, int), spc);
+			printf("%c%s", (char) va_arg(argumentos, int), spc);
 			break;
 		case 'i':/**integer */
 			printf("%d%s", va_arg(argumentos, int), spc);
 			break;
 		case 'f':/**float */
 			printf("%f%s", va_arg(argumentos, double), spc);
+			break;
+		case 's':/**char* */
+			strg = va_arg(argumentos, char*);
+			if (!strg)
+				strg = "(nil)";
+			printf("%s%s", strg, spc);
 			break;
 		}
 		contador++;
