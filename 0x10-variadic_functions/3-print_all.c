@@ -2,15 +2,10 @@
 
 /**
  * print_all - prints anything.
- *@format: const.
+ *@format: string.
  *
- *If the string is NULL, print (nil)
- * 2 while loops.
- * 2 if.
- * Just maximum 9 variables.
- * Print new line  at the end of the function.
  *
- * Return: none .
+ * Return: Empty .
  */
 
 void print_all(const char * const format, ...)
@@ -32,18 +27,18 @@ void print_all(const char * const format, ...)
 		}
 		switch (format[contador])
 		{
-		case 'c':/**char */
+		case 'c':
 			printf("%c%s", (char) va_arg(argumentos, int), spc);
 			break;
-		case 'i':/**integer */
+		case 'i':
 			printf("%d%s", va_arg(argumentos, int), spc);
 			break;
-		case 'f':/**float */
+		case 'f':
 			printf("%f%s", va_arg(argumentos, double), spc);
 			break;
-		case 's':/**char* */
-			strg = va_arg(argumentos, char*);
-			if (strg == NULL)
+		case 's':
+			strg = va_arg(argumentos, char *);
+			if (!strg)
 				strg = "(nil)";
 			printf("%s%s", strg, spc);
 			break;
