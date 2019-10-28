@@ -22,9 +22,8 @@ void print_all(const char * const format, ...)
 	{
 		spc = "";
 		if (format[contador + 1] != 0 && contador >= 0)
-		{
 			spc = ", ";
-		}
+
 		switch (format[contador])
 		{
 		case 'c':
