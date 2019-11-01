@@ -1,9 +1,9 @@
 #include "lists.h"
 /**
- * add_node - list the nodes of a list strcutre
- *@head: first structure in the list
- *@str: string to add to new structure
- *Return: new structure with str on it
+ * add_node - function that adds a new node at the beginning of a list
+ *@head: list_lT
+ *@str: char
+ *Return: Always
  */
 list_t *add_node(list_t **head, const char *str)
 {
