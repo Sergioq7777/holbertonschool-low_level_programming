@@ -1,17 +1,17 @@
 #include "lists.h"
 /**
- * free_list - free space allocated for list in memory
- *@head: Head of the lis to be freed
+ * free_list - function that frees a list
+ *@head: list_t
  */
 void free_list(list_t *head)
 {
-	list_t *through = NULL;
+	list_t *temporal = NULL;
 
-	while (head)
+	for (; head;)
 	{
-		through = head;
+		temporal = head;
 		head = head->next;
-		free(through->str);
-		free(through);
+		free(temporal->str);
+		free(temporal);
 	}
 }
