@@ -1,34 +1,36 @@
 #include "lists.h"
 /**
- * add_node_end - add  nodes at the end of the list
- *@head: first structure in the list
- *@str: string to add to new structure
- *Return: new structure with str on it
+ * add_node_end - adds a new node at the end of a list
+ *@head: list_t
+ *@str: char
+ *Return: Always
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	size_t n;
-	list_t *ad_end, *tmp;
+	size_t size;
+	list_t *end, *temporal;
 
-	n = 0;
-	ad_end = malloc(sizeof(list_t));
-	if (!ad_end)
+	end = malloc(sizeof(list_t));
+	if (!end)
 		return (NULL);
 	if (*head == NULL)
-		*head = ad_end;
+		*head = end;
 	else
 	{
-		tmp = *head;
-		for (; tmp->next; )
+		temporal = *head;
+		while (temporal->next)
 		{
-			tmp = tmp->next;
+			temporal = temporal->next;
 		}
-		tmp->next = ad_end;
+		temporal->next = end;
 	}
-	ad_end->str = strdup(str);
-	while (str[n] != '\0')
-		n++;
-	ad_end->next = NULL;
-	ad_end->len = n;
+
+	end->str = strdup(str);
+
+	for (size = 0; str[size] != '\0'; size++)
+		;
+
+	end->next = NULL;
+	end->len = size;
 	return (*head);
 }
