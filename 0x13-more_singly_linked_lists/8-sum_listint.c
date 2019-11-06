@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * get_nodeint_at_index - function that returns the nth node index
+ * sum_listint - function that returns the sum of all the date n.
  * @head: listint_t
  *
  * Return: sum
