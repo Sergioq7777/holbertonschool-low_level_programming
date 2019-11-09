@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * unsigned int - function that returns the number of bits - to flip.
+ * flip_bits - function that returns the number of bits - to flip.
  * @n: unsigned int.
  * @m:unsigned int.
  *
