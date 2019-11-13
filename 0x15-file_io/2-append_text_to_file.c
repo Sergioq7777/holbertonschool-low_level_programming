@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * create_file - Function that ccreates a file.
+ * append_text_to_file - Function that ccreates a file.
  *
  *@filename: char.
  *@text_content: char.
@@ -9,7 +9,7 @@
  * Return: int.
  */
 
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 
 	int fd = open(filename, O_RDWR | O_APPEND);
