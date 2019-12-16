@@ -20,20 +20,20 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (-1);
 	else if (index == 0)
 	{
-		d_beg(head);
+		beg(head);
 		return (1);
 	}
 	else if (index == count)
 	{
-		d_end(head);
+		end(head);
 		return (1);
 	}
-	d_reg(head, index);
+	rg(head, index);
 
 	return (1);
 }
 /**
- * d_beg - deletes
+ * beg - deletes
  *@head: head
  */
 void beg(dlistint_t **head)
@@ -55,7 +55,7 @@ void beg(dlistint_t **head)
 	}
 }
 /**
- * d_end - deletes.
+ * end - deletes.
  *@head: head
  */
 void end(dlistint_t **head)
@@ -71,7 +71,7 @@ void end(dlistint_t **head)
 	aux1 = NULL;
 }
 /**
- * d_reg - deletes.
+ * rg - deletes.
  *@head: head.
  *@idx: index.
  */
