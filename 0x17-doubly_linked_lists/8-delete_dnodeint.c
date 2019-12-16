@@ -36,7 +36,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
  * d_beg - deletes
  *@head: head
  */
-void d_beg(dlistint_t **head)
+void beg(dlistint_t **head)
 {
 	dlistint_t *aux;
 
@@ -58,7 +58,7 @@ void d_beg(dlistint_t **head)
  * d_end - deletes.
  *@head: head
  */
-void d_end(dlistint_t **head)
+void end(dlistint_t **head)
 {
 	dlistint_t  *aux, *aux1;
 
@@ -75,7 +75,7 @@ void d_end(dlistint_t **head)
  *@head: head.
  *@idx: index.
  */
-void d_reg(dlistint_t **head, unsigned int idx)
+void rg(dlistint_t **head, unsigned int idx)
 {
 	dlistint_t  *aux, *aux1;
 	unsigned int count = 0;
