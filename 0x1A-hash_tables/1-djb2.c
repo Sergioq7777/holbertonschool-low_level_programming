@@ -1,8 +1,7 @@
-#include "hash.h"
+#include "hash_tables.h"
 /**
- * hash_djb2 - create a hash table.
- * @str: key to create index code.
- *
+ * hash_djb2 - create hash table
+ * @str: string to hash
  * Return: index code
  */
 unsigned long int hash_djb2(const unsigned char *str)
