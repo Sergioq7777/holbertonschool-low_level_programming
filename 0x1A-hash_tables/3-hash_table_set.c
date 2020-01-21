@@ -1,76 +1,59 @@
 #include "hash_tables.h"
 /**
- *hash_table_set - adds to hash table
- *
- *@ht: hash table
- *@key: key.
- *@value: value
- *Return: 1 True
+ * link_nodes-Create a linked nodes
+ * @key: Is the key to map
+ * @value:Is the value from the key
+ * Return: The new linked element
+ */
+hash_node_t *link_nodes(const char *key, const char *value)
+{
+	hash_node_t *new_element;
+
+	new_element = malloc(sizeof(hash_table_t *));
+	if (new_element == NULL)
+		return (NULL);
+	new_element->key = strdup(key);
+	if (new_element->key == NULL)
+		return (NULL);
+	new_element->value = strdup(value);
+	if (new_element->value == NULL)
+		return (NULL);
+	return (new_element);
+}
+
+/**
+ * hash_table_set -function that adds an element to the HT
+ * @ht: Reference to hash table
+ * @key:Is the key that will to map
+ * @value:Is the value of each key
+ * Return: 1 if is succes 0 is not
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *add_h;
-	unsigned long int ind = 0;
+	unsigned int ind;
+	hash_node_t *map_node, *j;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL || key == NULL || value == '\0')
 		return (0);
-	add_h = malloc(sizeof(hash_node_t));
-	if (!add_h)
-		return (0);
-	ind = key_index((const unsigned char *)key, ht->size);
-	if (ht->array[ind] == NULL)
+
+	ind = key_index((const unsigned char *) key, ht->size);
+
+	for (j = ht->array[ind]; j != NULL; j = j->next)
 	{
-		add_h->key = strdup(key);
-		if (!add_h->key)
-			return (0);
-		add_h->value = strdup(value);
-		if (!add_h->value)
-			return (0);
-		add_h->next = NULL;
-		ht->array[ind] = add_h;
+		if ((strcmp(j->key, key) == 0) && (strcmp(j->value, value) != 0))
+		{
+			free(j->value);
+			j->value = strdup(value);
+			if (j->value == NULL)
+				return (0);
+		}
 		return (1);
 	}
-	free(add_h);
-	return (h_t_s(ht, key, value));
-}
-/**
- *h_t_s - adds hash table
- *
- *@ht: hash
- *@key: Key
- *@value: value key
- *Return: 1 true
- */
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
-{
-	hash_node_t *aux, *add_h;
-	unsigned long int ind = 0;
+	map_node = link_nodes(key, value);
 
-	add_h = malloc(sizeof(hash_node_t));
-	if (!add_h)
+	if (map_node == NULL)
 		return (0);
-	ind = key_index((const unsigned char *)key, ht->size);
-	aux =  ht->array[ind];
-	while (aux)
-	{
-		if (strcmp(key, aux->key) == 0)
-		{
-			free(aux->value);
-			aux->value = strdup(value);
-			if (!aux->value)
-				return (0);
-			return (1);
-		}
-		aux = aux->next;
-	}
-	aux = ht->array[ind];
-	add_h->key = strdup(key);
-	if (!add_h->key)
-		return (0);
-	add_h->value = strdup(value);
-	if (!add_h->value)
-		return (0);
-	add_h->next = aux;
-	ht->array[ind] = add_h;
+	map_node->next = ht->array[ind];
+	ht->array[ind] = map_node;
 	return (1);
 }
