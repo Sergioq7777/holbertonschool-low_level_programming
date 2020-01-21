@@ -39,9 +39,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *@ht: hash
  *@key: Key
  *@value: value key
- *Return: 1 True
+ *Return: 1 true
  */
-int h_t_s(hash_table_t *ht, const char *key, const char *value)
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *aux, *add_h;
 	unsigned long int ind = 0;
