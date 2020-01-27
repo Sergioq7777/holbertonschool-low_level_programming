@@ -1,30 +1,33 @@
 #include "hash_tables.h"
 /**
- *hash_table_print - adds an ellement to a hash table
- *
- *@ht: hash table to be updated
- *Return: value associated with key
+ * hash_table_print - prints a hash table
+ * @ht: Is the reference to hast table *
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_node_t *tmp;
-	unsigned int count, f = 0;
+	unsigned int ind;
+	hash_node_t *new_ele;
+	int flag = 0;
 
-	if (ht == NULL)
-		exit(0);
-
+	if (!ht)
+		return;
 	printf("{");
-	for (count = 0; count < ht->size; count++)
+
+	for (ind = 0; ind < ht->size; ind++)
 	{
-		tmp = ht->array[count];
-		while (tmp)
+		if (ht->array[ind] != NULL)
 		{
-			if (f == 0)
-				printf("'%s': '%s'", tmp->key, tmp->value);
-			else if (f == 1)
-				printf(", '%s': '%s'", tmp->key, tmp->value);
-			f = 1;
-			tmp = tmp->next;
+			if (flag == 1)
+				printf(", ");
+			new_ele = ht->array[ind];
+			while (new_ele != NULL)
+			{
+				printf("'%s': '%s'", new_ele->key, new_ele->value);
+				new_ele = new_ele->next;
+				if (new_ele == NULL)
+					printf(", ");
+			}
+			flag = 1;
 		}
 	}
 	printf("}\n");
