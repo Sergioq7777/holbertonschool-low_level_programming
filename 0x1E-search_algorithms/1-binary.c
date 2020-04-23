@@ -9,6 +9,7 @@
  * @array : input
  * Return: -1 or index
  */
+
 int binary_search(int *array, size_t size, int value)
 {
 	size_t l = 0, r = 0, i;
@@ -37,4 +38,5 @@ int binary_search(int *array, size_t size, int value)
 		else
 			return (m);
 	}
-	
+	return (-1);
+}
